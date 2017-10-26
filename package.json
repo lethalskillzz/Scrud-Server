@@ -1,5 +1,5 @@
 {
-    "name": "topeServer",
+    "name": "Scrud-Server",
     "version": "1.0.0",
     "description": "Scrud Server",
     "main": "index.js",
@@ -9,13 +9,17 @@
     },
     "author": "Ibrahim Abdulkadir",
     "license": "ISC",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/lethalskillzz/Scrud-Server.git"
+    },
     "devDependencies": {
-        "nodemon": "^1.11.0"
+        "nodemon": "^1.12.1"
     },
     "dependencies": {
-        "body-parser": "^1.17.2",
-        "express": "^4.15.3",
-        "mongoose": "^4.10.2"
+        "body-parser": "^1.18.2",
+        "express": "^4.16.1",
+        "mongoose": "^4.12.0"
     },
     "engines": {
         "node": "7.7.4",

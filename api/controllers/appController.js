@@ -1,60 +1,64 @@
 'use strict';
 
 var mongoose = require('mongoose'),
-    Record = mongoose.model('SudentResource');
+    Resource = mongoose.model('SudentResource');
 
 exports.list_all_students = function(req, res) {
-    Record.find({}, function(err, record) {
+    Resource.find({}, function(err, resource) {
         if (err)
             res.send(err);
-        res.json(record);
+        res.json(resource);
     });
 };
 
 
 exports.create_a_student = function(req, res) {
 
-    var new_record = new Record(req.query);
-    new_record.save(function(err, record) {
+    var new_resource = new Resource(req.query);
+    new_resource.save(function(err, resource) {
         if (err)
             res.send(err);
-        res.json(record);
+        res.json(resource);
     });
 };
 
 
 exports.count_all_students = function(req, res) {
-    Record.count({}, function(err, record) {
+    Resource.count({}, function(err, resource) {
         if (err)
             res.send(err);
-        res.send(record);
+        res.send(resource);
     });
 };
 
 
 exports.read_a_student = function(req, res) {
-    Record.findById(req.params.recordId, function(err, record) {
+    Resource.findOne({
+        regno: req.params.regno
+    }, function(err, resource) {
         if (err)
             res.send(err);
-        res.json(record);
+        res.json(resource);
     });
 };
 
 
 exports.update_a_student = function(req, res) {
-    Record.findOneAndUpdate(req.params.recordId, req.body, { new: true }, function(err, record) {
+    Resource.findOneAndUpdate({
+        regno: req.params.regno
+    }, req.body, { new: true }, function(err, resource) {
         if (err)
             res.send(err);
-        res.json(record);
+        res.json(resource);
     });
 };
 
 
 exports.delete_a_student = function(req, res) {
 
-    Record.remove({
-        _id: req.params.recordId
-    }, function(err, record) {
+    Resource.remove({
+        regno: req.params.regno
+    }, function(err, resource) {
         if (err)
             res.send(err);
         res.json({ message: 'Student deleted successfully' });
