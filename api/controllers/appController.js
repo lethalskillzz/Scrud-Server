@@ -13,7 +13,6 @@ exports.list_all_students = function(req, res) {
 
 
 exports.create_a_student = function(req, res) {
-
     var new_resource = new Resource(req.query);
     new_resource.save(function(err, resource) {
         if (err)
