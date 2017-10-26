@@ -1,9 +1,9 @@
 'use strict';
 
 var mongoose = require('mongoose'),
-    Record = mongoose.model('Records');
+    Record = mongoose.model('SudentResource');
 
-exports.list_all_records = function(req, res) {
+exports.list_all_students = function(req, res) {
     Record.find({}, function(err, record) {
         if (err)
             res.send(err);
@@ -12,7 +12,7 @@ exports.list_all_records = function(req, res) {
 };
 
 
-exports.create_a_record = function(req, res) {
+exports.create_a_student = function(req, res) {
 
     var new_record = new Record(req.query);
     new_record.save(function(err, record) {
@@ -23,7 +23,7 @@ exports.create_a_record = function(req, res) {
 };
 
 
-exports.count_all_records = function(req, res) {
+exports.count_all_students = function(req, res) {
     Record.count({}, function(err, record) {
         if (err)
             res.send(err);
@@ -32,7 +32,7 @@ exports.count_all_records = function(req, res) {
 };
 
 
-exports.read_a_record = function(req, res) {
+exports.read_a_student = function(req, res) {
     Record.findById(req.params.recordId, function(err, record) {
         if (err)
             res.send(err);
@@ -41,7 +41,7 @@ exports.read_a_record = function(req, res) {
 };
 
 
-exports.update_a_record = function(req, res) {
+exports.update_a_student = function(req, res) {
     Record.findOneAndUpdate(req.params.recordId, req.body, { new: true }, function(err, record) {
         if (err)
             res.send(err);
@@ -50,7 +50,7 @@ exports.update_a_record = function(req, res) {
 };
 
 
-exports.delete_a_record = function(req, res) {
+exports.delete_a_student = function(req, res) {
 
     Record.remove({
         _id: req.params.recordId
