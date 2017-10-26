@@ -3,27 +3,38 @@ var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
 
-var TaskSchema = new Schema({
-    fid1: {
+var StudentResourceSchema = new Schema({
+    lastname: {
         type: String,
-        Required: 'Kindly enter the fid1 of the record'
+        required: 'Lastname is required!'
     },
-
-    fid2: {
+    midname: {
+        type: String
+    },
+    firstname: {
         type: String,
-        Required: 'Kindly enter the fid2 of the record'
+        required: 'Firstname is required!'
     },
-
-    fid3: {
+    sex: {
         type: String,
-        Required: 'Kindly enter the fid3 of the record'
+        enum: ['Male', 'Female']
     },
-
-    Created_date: {
-        type: Date,
-        default: Date.now
+    regno: {
+        type: String,
+        unique: true,
+        required: 'Registration number is required!'
     },
-
+    image: {
+        type: String
+    },
+    dob: {
+        type: String,
+        required: 'Date of birth is required!'
+    },
+    class: {
+        type: String,
+            required: 'Class is required!'
+    }
 });
 
-module.exports = mongoose.model('Records', TaskSchema);
+module.exports = mongoose.model('StudentResource', TaskSchema);

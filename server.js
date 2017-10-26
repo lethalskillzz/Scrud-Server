@@ -1,7 +1,7 @@
 var express = require('express'),
     app = express(),
     port = process.env.PORT || 3000,
-    MONGODB = process.env.MONGOLAB_URI || 'mongodb://localhost/records_db',
+    MONGODB = process.env.MONGOLAB_URI || 'mongodb://localhost/student_resource_db',
     mongoose = require('mongoose'),
     Task = require('./api/models/appModel'),
     bodyParser = require('body-parser');
@@ -23,4 +23,4 @@ app.use(function(req, res) {
 
 app.listen(port);
 
-console.log('tope RESTful API server started on: ' + port);
+console.log('Student Resource RESTful API server started on: ' + port);
