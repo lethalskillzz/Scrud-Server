@@ -2,7 +2,6 @@
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
-
 var StudentResourceSchema = new Schema({
     lastname: {
         type: String,
@@ -17,7 +16,7 @@ var StudentResourceSchema = new Schema({
     },
     sex: {
         type: String,
-        enum: ['Male', 'Female']
+        enum: ['male', 'female']
     },
     regno: {
         type: String,
@@ -34,7 +33,11 @@ var StudentResourceSchema = new Schema({
     class: {
         type: String,
             required: 'Class is required!'
-    }
+    },
+    createddate: {
+        type: Date,
+        default: Date.now
+    },
 });
 
-module.exports = mongoose.model('StudentResource', TaskSchema);
+module.exports = mongoose.model('StudentResource', StudentResourceSchema);

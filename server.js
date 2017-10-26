@@ -3,7 +3,7 @@ var express = require('express'),
     port = process.env.PORT || 3000,
     MONGODB = process.env.MONGOLAB_URI || 'mongodb://localhost/student_resource_db',
     mongoose = require('mongoose'),
-    Task = require('./api/models/appModel'),
+    StudentResource = require('./api/models/appModel'),
     bodyParser = require('body-parser');
 
 mongoose.Promise = global.Promise;
