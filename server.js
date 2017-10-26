@@ -1,7 +1,7 @@
 var express = require('express'),
     app = express(),
     port = process.env.PORT || 3000,
-    MONGODB = process.env.MONGOLAB_URI || 'mongodb://localhost/Topedb',
+    MONGODB = process.env.MONGOLAB_URI || 'mongodb://localhost/records_db',
     mongoose = require('mongoose'),
     Task = require('./api/models/appModel'),
     bodyParser = require('body-parser');
