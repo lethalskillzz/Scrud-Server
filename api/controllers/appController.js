@@ -1,7 +1,7 @@
 'use strict';
 
 var mongoose = require('mongoose'),
-    Resource = mongoose.model('SudentResource');
+    Resource = mongoose.model('StudentResource');
 
 exports.list_all_students = function(req, res) {
     Resource.find({}, function(err, resource) {
