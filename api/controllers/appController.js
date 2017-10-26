@@ -54,7 +54,6 @@ exports.update_a_student = function(req, res) {
 
 
 exports.delete_a_student = function(req, res) {
-
     Resource.remove({
         regno: req.params.regno
     }, function(err, resource) {
