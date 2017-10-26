@@ -57,6 +57,6 @@ exports.delete_a_student = function(req, res) {
     }, function(err, record) {
         if (err)
             res.send(err);
-        res.json({ message: 'Record successfully deleted' });
+        res.json({ message: 'Student deleted successfully' });
     });
 };
