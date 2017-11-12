@@ -1,6 +1,6 @@
 var express = require('express'),
     app = express(),
-    port = process.env.PORT || 3000,
+    port = process.env.PORT || 6000,
     MONGODB = process.env.MONGOLAB_URI || 'mongodb://localhost/student_resource_db',
     mongoose = require('mongoose'),
     StudentResource = require('./api/models/appModel'),
@@ -24,9 +24,9 @@ app.use(bodyParser.json());
 var routes = require('./api/routes/appRoutes');
 routes(app);
 
-app.use(function(req, res) {
-    res.status(404).send({ url: req.originalUrl + ' not found' })
-});
+// app.use(function(req, res) {
+//     res.status(404).send({ url: req.originalUrl + ' not found' })
+// });
 
 app.listen(port);
 
