@@ -13,7 +13,8 @@ var StudentResourceSchema = new Schema({
     },
     sex: {
         type: String,
-        enum: ['Male', 'Female']
+        enum: ['Male', 'Female'],
+        default: 'Male'
     },
     regno: {
         type: String,
