@@ -7,16 +7,13 @@ var StudentResourceSchema = new Schema({
         type: String,
         required: 'Lastname is required!'
     },
-    midname: {
-        type: String
-    },
     firstname: {
         type: String,
         required: 'Firstname is required!'
     },
     sex: {
         type: String,
-        enum: ['male', 'female']
+        enum: ['Male', 'Female']
     },
     regno: {
         type: String,
